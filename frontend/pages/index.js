@@ -1,5 +1,4 @@
 export default function HomePage() {
-  return <div>Home Page</div>;
   const today = new Date();
   const wedding = new Date('October 14, 2021');
   const weddingString = wedding.toDateString();
@@ -15,4 +14,11 @@ export default function HomePage() {
   const oneDay = 1000 * 60 * 60 * 24;
   const daysLeft = Math.ceil((wedding.getTime() - today.getTime()) / oneDay);
 
+  return (
+    <>
+      <h1>When?</h1>
+      <p>{weddingString}</p>
+      <h4>{daysLeft} days left</h4>
+    </>
+  );
 }
