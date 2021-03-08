@@ -2,6 +2,11 @@ import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import 'dotenv/config';
 import { User } from './schemas/User';
+import { WeddingImage } from './schemas/WeddingImage';
+import {
+  withItemData,
+  statelessSessions,
+} from '@keystone-next/keystone/session';
 
 const databaseURL = process.env.DATABASE_URL;
 
@@ -36,11 +41,17 @@ export default withAuth(
     lists: createSchema({
       // Schema items go in here
       User,
+      WeddingImage,
     }),
     ui: {
       // Change this for roles
-      isAccessAllowed: () => true,
+      isAccessAllowed: ({ session }) => {
+        console.log(session);
+        return !!session?.data;
+      },
     },
-    // Add session values here
+    session: withItemData(statelessSessions(sessionConfig), {
+      User: `id`,
+    }),
   })
 );
