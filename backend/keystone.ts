@@ -10,6 +10,16 @@ const sessionConfig = {
   secret: process.env.COOKIE_SECRET,
 };
 
+const { withAuth } = createAuth({
+  listKey: 'User',
+  identityField: 'email',
+  secretField: 'password',
+  initFirstItem: {
+    fields: ['name', 'email', 'password'],
+    // TODO: Add in initial roles here
+  },
+});
+
 export default config({
   server: {
     cors: {
