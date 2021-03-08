@@ -34,6 +34,7 @@ export default config({
   },
   lists: createSchema({
     // Schema items go in here
+    User,
   }),
   ui: {
     // Change this for roles
