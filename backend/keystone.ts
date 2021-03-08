@@ -20,25 +20,27 @@ const { withAuth } = createAuth({
   },
 });
 
-export default config({
-  server: {
-    cors: {
-      origin: [process.env.FRONTEND_URL],
-      credentials: true,
+export default withAuth(
+  config({
+    server: {
+      cors: {
+        origin: [process.env.FRONTEND_URL],
+        credentials: true,
+      },
     },
-  },
-  db: {
-    adapter: 'mongoose',
-    url: databaseURL,
-    // TODO: Add data seeding here
-  },
-  lists: createSchema({
-    // Schema items go in here
-    User,
-  }),
-  ui: {
-    // Change this for roles
-    isAccessAllowed: () => true,
-  },
-  // Add session values here
-});
+    db: {
+      adapter: 'mongoose',
+      url: databaseURL,
+      // TODO: Add data seeding here
+    },
+    lists: createSchema({
+      // Schema items go in here
+      User,
+    }),
+    ui: {
+      // Change this for roles
+      isAccessAllowed: () => true,
+    },
+    // Add session values here
+  })
+);
