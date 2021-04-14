@@ -1,6 +1,5 @@
 export default function HomePage() {
   const today = new Date();
-  const weddingString = wedding.toDateString();
 
   if (today.getMonth() === 9 && today.getDate() > 14) {
     wedding.setFullYear(wedding.getFullYear() + 1);
@@ -12,6 +11,10 @@ export default function HomePage() {
     month: 'long',
     day: 'numeric',
   };
+  const weddingDateString = weddingDate.toLocaleDateString(
+    'en-US',
+    weddingDateOptions
+  );
 
   if (today.getMonth() === 9 && today.getDate() === 14) {
     return <p>Today's the day!</p>;
