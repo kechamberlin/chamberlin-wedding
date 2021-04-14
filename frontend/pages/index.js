@@ -11,13 +11,15 @@ export default function HomePage() {
     'en-US',
     weddingDateOptions
   );
+  const oneDay = 1000 * 60 * 60 * 24;
+  const daysLeft = Math.ceil(
+    (weddingDate.getTime() - today.getTime()) / oneDay
+  );
 
   if (today.getMonth() === 9 && today.getDate() === 14) {
     return <p>Today's the day!</p>;
   }
 
-  const oneDay = 1000 * 60 * 60 * 24;
-  const daysLeft = Math.ceil((wedding.getTime() - today.getTime()) / oneDay);
 
   return (
     <>
