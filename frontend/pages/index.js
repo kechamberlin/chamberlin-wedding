@@ -6,6 +6,12 @@ export default function HomePage() {
     wedding.setFullYear(wedding.getFullYear() + 1);
   }
   const weddingDate = new Date('October 14, 2021');
+  const weddingDateOptions = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  };
 
   if (today.getMonth() === 9 && today.getDate() === 14) {
     return <p>Today's the day!</p>;
