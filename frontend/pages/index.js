@@ -30,7 +30,7 @@ export default function HomePage() {
   return (
     <>
       <h1>When?</h1>
-      <p>{weddingString}</p>
+      <p>{weddingDateString}</p>
       <h4>{daysLeft} days left</h4>
     </>
   );
