@@ -29,6 +29,7 @@ export default function HomePage() {
 
   return (
     <>
+      <h1>Aleah and Kris</h1>
       <h1>When?</h1>
       <p>{weddingDateString}</p>
       <h4>{daysLeft} days left</h4>
