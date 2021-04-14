@@ -1,9 +1,5 @@
 export default function HomePage() {
   const today = new Date();
-
-  if (today.getMonth() === 9 && today.getDate() > 14) {
-    wedding.setFullYear(wedding.getFullYear() + 1);
-  }
   const weddingDate = new Date('October 14, 2021');
   const weddingDateOptions = {
     weekday: 'long',
