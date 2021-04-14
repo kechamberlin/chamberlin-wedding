@@ -1,11 +1,11 @@
 export default function HomePage() {
   const today = new Date();
-  const wedding = new Date('October 14, 2021');
   const weddingString = wedding.toDateString();
 
   if (today.getMonth() === 9 && today.getDate() > 14) {
     wedding.setFullYear(wedding.getFullYear() + 1);
   }
+  const weddingDate = new Date('October 14, 2021');
 
   if (today.getMonth() === 9 && today.getDate() === 14) {
     return <p>Today's the day!</p>;
