@@ -20,6 +20,12 @@ export default function HomePage() {
     return <p>Today's the day!</p>;
   }
 
+  if (
+    (today.getMonth() >= 9 && today.getDate() > 14) ||
+    today.getFullYear() >= 2022
+  ) {
+    return <p>it's over!!</p>;
+  }
 
   return (
     <>
